@@ -1,6 +1,8 @@
-import mysqlservice
-
+from mysqlservice import creatDatabase
+from mysqlservice import createTable
+from bookService import insertBook
 
 #mysqlservice.showDatabases()
 #mysqlservice.creatDatabase('test')
-mysqlservice.createTable('test')
+#createTable('test',2)
+insertBook()

@@ -4,7 +4,9 @@ import pymysql
 import jieba
 import codecs
 import pandas as pd
+import numpy
 import jieba.analyse
+
 import jieba.posseg as psg
 from collections import Counter
 
@@ -120,5 +122,39 @@ def wordFrequencyCount(word_list,top=100):
         resultlist.append(sortlist[i])
     return resultlist
 
+#领域名词清洗
+def getNouns():
+    textrank = jieba.analyse.textrank
+    file = open('D:/book_infor/bookinfor.txt', 'r', encoding='UTF-8-sig')
+    book_fields = []
+    n_nouns = []  # 名词
+    nr_nouns = []  # 人名
+    nz_nouns = []  # 其他专有名词
+    file_n = open('D:/book_infor/data/n_nouns.txt', 'a', encoding='UTF-8-sig')
+    file_nr = open('D:/book_infor/data/nr_nouns.txt', 'a', encoding='UTF-8-sig')
+    file_nz = open('D:/book_infor/data/nz_nouns.txt', 'a', encoding='UTF-8-sig')
+    for line in file.readlines():
+        nouns = psg.cut(line)
+        for noun in nouns:
+            if noun.flag == 'n' and noun.word+'\n' not in n_nouns and len(noun.word)>1:
+                n_nouns.append(noun.word+'\n')
+            elif noun.flag =='nr' and noun.word+'\n' not in nr_nouns and len(noun.word)>1:
+                nr_nouns.append(noun.word+'\n')
+            elif noun.flag =='nz' and noun.word+'\n' not in nz_nouns and len(noun.word)>1:
+                nz_nouns.append(noun.word+'\n')
+    file_n.writelines(n_nouns)
+    file_nr.writelines(nr_nouns)
+    file_nz.writelines(nz_nouns)
 
+    print('名词：')
+    print(n_nouns)
+    print('人名：')
+    print(nr_nouns)
+    print('专有名词：')
+    print(nz_nouns)
+
+    file.close()
+    file_n.close()
+    file_nr.close()
+    file_nz.close()
 

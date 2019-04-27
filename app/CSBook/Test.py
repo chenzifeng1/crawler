@@ -1,8 +1,17 @@
-import dataService
-from bookService import writeBookName
-import mysqlservice
-import bookService
+from dataService import dataSplite,dataStore
+
+from mysqlservice import *
+import neo4jService
+from keywordService import getKeywords
+from bookService import *
+
+from PKUSegService import wordCut
+import jieba.analyse
 inputfile = 'D:/book_infor/bookinfor.txt'
+
+
+
+
 #dataService.dataSplite()
 
 #word_list = dataService.cut_word(inputfile)
@@ -10,6 +19,46 @@ inputfile = 'D:/book_infor/bookinfor.txt'
 #输出统计结果
 #print(statistic_result)
 
-#mysqlservice.createTable('test')
+#createTable('test',4)
 #writeBookName()
-bookService.readBookField()
+'''
+columns = []
+result = readBookField().fetchall()
+col_result = readBookField().description
+'''
+#ne
+
+getDoubanBooks()
+#wordCut()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,7 +16,7 @@ def writeBookName():
     book_namelist = []
     print('begin:')
     rowcount = 0
-    readFile = open('D:/book_infor/data/books.txt','r',encoding='UTF-8')
+    readFile = open('D:/book_infor/data/books.txt','r',encoding='UTF-8-sig')
     print('open file success!')
     conn = pymysql.connect(
         host=root['host'],
@@ -67,8 +67,47 @@ def readBookField():
         charset='utf8'
     )
     cursor = conn.cursor()
-    sqlStr = 'select * from book_field;'
+    sqlStr = 'select * from book;'
     cursor.execute(sqlStr)
-    book_fields = cursor.fetchall()
-    for line in book_fields:
-        print(line)
+    cursor.close()
+    conn.close()
+    return cursor
+
+
+def insertBook():
+    file = open('D:/book_infor/data/books.txt','r',encoding='UTF-8-sig')
+    books = file.readlines()
+    root = getUsernameAndPassword()
+    conn = pymysql.connect(
+        host=root['host'],
+        port=3306,
+        user=root['username'],
+        password=root['password'],
+        database='test',
+        charset='utf8'
+    )
+    cursor = conn.cursor()
+    textrank = jieba.analyse.textrank
+    for book in books:
+        sqlStr = 'INSERT INTO book(book_name,book_describe) VALUES (%s,%s)'
+        desc = textrank(book,topK=1)
+        if(len(desc)==0):
+            print(desc)
+            cursor.execute(sqlStr,[book[2:-3],'CS'])
+        else:
+            print(desc)
+            cursor.execute(sqlStr, [book[2:-3], desc])
+    conn.commit()
+    cursor.close()
+    conn.close()
+    file.close()
+
+def getDoubanBooks():
+    try:
+        file = open('D:/book_infor/book_info.txt','r',encoding='UTF-8-sig')
+        for book in file.readlines():
+
+            for item in book.split(' '):
+                print(item)
+    except FileNotFoundError:
+        print('没有找到文件:'+FileNotFoundError.filename)
