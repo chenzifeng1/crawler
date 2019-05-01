@@ -8,16 +8,20 @@ import jieba.analyse
 import jieba.posseg as psg
 from collections import Counter
 from mysqlservice import getUsernameAndPassword
+from logging import log
 
+LOG_ERROR = 'bookService_ERROR'
+LOG_WARNING ='bookService_WARNING'
 
 def writeBookName():
-    root = getUsernameAndPassword()
+
     textrank = jieba.analyse.textrank
     book_namelist = []
     print('begin:')
     rowcount = 0
     readFile = open('D:/book_infor/data/books.txt','r',encoding='UTF-8-sig')
     print('open file success!')
+    root = getUsernameAndPassword()
     conn = pymysql.connect(
         host=root['host'],
         port=3306,
@@ -49,7 +53,7 @@ def writeBookName():
                     cursor.execute(sql_str,[line[2:-3], keyword, 'Belong to'])
             conn.commit()
         except Exception:
-            print('insert failed')
+            log(LOG_ERROR,'insert failed')
         rowcount = rowcount+ cursor.rowcount
     print(rowcount)
     cursor.close()
@@ -111,3 +115,43 @@ def getDoubanBooks():
                 print(item)
     except FileNotFoundError:
         print('没有找到文件:'+FileNotFoundError.filename)
+
+def getBooks():
+
+    try:
+        inputFile = open('D:/book_infor/book_info.txt','r',encoding='UTF-8')
+        outputFile = open('D:/book_infor/tag.txt','a',encoding='UTF-8')
+    except FileNotFoundError:
+        log(LOG_ERROR,'File not found:'+FileNotFoundError.filename)
+
+    tags = []
+
+    for book in inputFile.readlines():
+        word = book.split(':')[0]
+        if word == 'tag':
+            book_tag = book.split(':')[1]
+            print(book_tag.replace('\n',''))
+            tags.append(book_tag)
+    outputFile.writelines(tags)
+
+    inputFile.close()
+    outputFile.close()
+'''
+    try:
+        root = getUsernameAndPassword()
+        conn = pymysql.connect(
+            host=root['host'],
+            port=3306,
+            user=root['username'],
+            password=root['password'],
+            database='test',
+            charset='utf8'
+        )
+
+
+
+        cursor = conn.cursor()
+
+    except ConnectionError:
+        print('数据库连接失败->error_no:'+ConnectionError.errno)
+'''

@@ -28,7 +28,8 @@ col_result = readBookField().description
 '''
 #ne
 
-getDoubanBooks()
+#getDoubanBooks()
+getBooks()
 #wordCut()
 
 

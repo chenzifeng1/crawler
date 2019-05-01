@@ -18,16 +18,17 @@ def provide_url():
     responds = requests.get("https://book.douban.com/tag/?icn=index-nav")
     # html为获得响应的页面内容
     html = responds.text
-    # 解析页面--python3.7没有对应的lxml，需要使用其他方式进行解析
-
-
+    # 解析页面--python3.7没有对应的lxml，需要使用其他方式进行解析  需要进行登陆验证
     soup = BeautifulSoup(html, "lxml")
+    print(soup)
     # 选取页面中的需要的a标签，从而提取出其中的所有链接
     book_table = soup.select("#content > div > .article > div > div > .tagCol > tbody > tr > td > a")
     # 新建一个列表来存放爬取到的所有链接
     book_url_list = []
     for book in book_table:
+
         book_url_list.append('https://book.douban.com/tag/' + str(book.string))
+
     return book_url_list
 
 #获得评分人数的函数
@@ -78,6 +79,7 @@ def test_print(name,author,intepretor,publish,time,price,score,person):
 
 #解析每个页面获得其中需要信息的函数
 def get_url_content(url):
+    print('url:'+url)
     res = requests.get(url)
     html = res.text
     soup = BeautifulSoup(html.encode('utf-8'),"lxml")
@@ -90,8 +92,8 @@ def get_url_content(url):
     print("*******************这是 %s 类的书籍**********************" %tag)
 
     #打开文件，将信息写入文件
-    file = open("D:/book_infor/book_info.txt",'a') #可以更改为你自己的文件地址
-    file.write("tag: %s \n" % tag)
+    file = open("D:/book_infor/book_infor.txt",'a') #可以更改为你自己的文件地址
+    file.write("tag:%s\n" % tag)
 
     #用zip函数将相应的信息以元祖的形式组织在一起，以供后面遍历
     for title,detail,score,person in zip(titles,details,scores,persons):
@@ -108,16 +110,18 @@ def get_url_content(url):
             test_print(name,author,intepretor,publish,time,price,score,person)
             #将书籍信息写入txt文件
             try:
-                file.write('name: %s ' % name)
-                file.write('author: %s ' % author)
-                file.write('intepretor: %s ' % intepretor)
-                file.write('publish: %s ' % publish)
-                file.write('time: %s ' % time)
-                file.write('price: %s ' % price)
-                file.write('score: %s ' % score)
-                file.write('person: %s ' % person)
+                file.write('name:%s,' % name)
+                file.write('author:%s,' % author)
+                file.write('intepretor:%s,' % intepretor)
+                file.write('publish:%s,' % publish)
+                file.write('time:%s,' % time)
+                file.write('price:%s,' % price)
+                file.write('score:%s,' % score)
+                file.write('person:%s,' % person)
+                file.write('tag:%s' % tag)
                 file.write('\n')
             except (IndentationError,UnicodeEncodeError):
+                print('error')
                 continue
 
         except IndexError:
@@ -134,32 +138,37 @@ def get_url_content(url):
                 test_print(name, author, intepretor, publish, time, price, score, person)
                 #将书籍信息写入txt文件
                 try:
-                    file.write('name: %s ' % name)
-                    file.write('author: %s ' % author)
-                    file.write('intepretor: %s ' % intepretor)
-                    file.write('publish: %s ' % publish)
-                    file.write('time: %s ' % time)
-                    file.write('price: %s ' % price)
-                    file.write('score: %s ' % score)
-                    file.write('person: %s ' % person)
+                    file.write('name:%s,' % name)
+                    file.write('author:%s,' % author)
+                    file.write('intepretor:%s,' % intepretor)
+                    file.write('publish:%s,' % publish)
+                    file.write('time:%s,' % time)
+                    file.write('price:%s,' % price)
+                    file.write('score:%s,' % score)
+                    file.write('person:%s,' % person)
+                    file.write('tag:%s'% tag)
                     file.write('\n')
                 except (IndentationError, UnicodeEncodeError):
+                    print('expection1:')
                     continue
 
             except (IndexError,TypeError):
+                print('expection2:')
                 continue
 
         except TypeError:
+            print('expection3:')
             continue
-    file
-
     file.write('\n')
-    file.close()  #关闭文件
+    file.close()  #关闭文件1
 
 
 #程序执行入口
 if __name__ == '__main__':
-    url = "https://book.douban.com/tag/程序"
+    #url = "https://book.douban.com/tag/程序"
+    print('begin:')
     book_url_list = provide_url() #存放豆瓣所有分类标签页URL的列表
+    print(book_url_list)
+    print('标签获取成功')
     for url in book_url_list:
         get_url_content(url)  #解析每一个URL的内容
