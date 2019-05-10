@@ -111,6 +111,12 @@ def createTable(DBName, num):
             `person` VARCHAR(50) NOT NULL,
             `tag` VARCHAR(50) NOT NULL,
             PRIMARY KEY(id));'''
+
+        sql_tag = '''create table `tag` (
+            `tag_id` INT NOT NULL AUTO_INCREMENT,
+            `tag_name` VARCHAR(50) NOT NULL ,
+            PRIMARY KEY(tag_id));'''
+
         cursor = conn.cursor()
         cursor.execute('show tables;')
         row = cursor.fetchall()
@@ -129,6 +135,9 @@ def createTable(DBName, num):
         elif num ==4 :
             SQL = sql_douban
             table_name = 'douban_book'
+        elif num ==5:
+            SQL = sql_tag
+            table_name = 'tag'
         exist_flag = isExist(row, table_name)
         if exist_flag:
             print('数据表已存在')

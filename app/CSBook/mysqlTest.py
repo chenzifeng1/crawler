@@ -4,5 +4,5 @@ from bookService import insertBook
 
 #mysqlservice.showDatabases()
 #mysqlservice.creatDatabase('test')
-#createTable('test',2)
-insertBook()
+createTable('test',5)
+#insertBook()

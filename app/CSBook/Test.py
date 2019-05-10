@@ -2,9 +2,9 @@ from dataService import dataSplite,dataStore
 
 from mysqlservice import *
 import neo4jService
-from keywordService import getKeywords
+from keywordService import *
 from bookService import *
-
+from dataService import *
 from PKUSegService import wordCut
 import jieba.analyse
 inputfile = 'D:/book_infor/bookinfor.txt'
@@ -29,9 +29,9 @@ col_result = readBookField().description
 #ne
 
 #getDoubanBooks()
-getBooks()
-#wordCut()
 
+getBookName()
+#wordCut()
 
 
 

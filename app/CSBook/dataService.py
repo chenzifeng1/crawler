@@ -158,3 +158,19 @@ def getNouns():
     file_nr.close()
     file_nz.close()
 
+
+# 获取书名
+def book_name():
+    file = open('D:/book_infor/data/book_use.txt', 'r', encoding='UTF-8-sig')
+    patten = re.compile(r'[《》]')
+    books = []
+    for line in file.readlines():
+        if patten.findall(line) :
+            continue
+        else:
+            newline =re.sub(r"[\.\!\/_,$%^*(【】：\]\[\-:;+\"\']+|[+—'—！，。？、~@#￥%……&*（）《》]","",line).strip()
+            book=newline.split(' ')[0]
+        if len(book)>0 and book not in books:
+            books.append(book)
+    file.close()
+    return books

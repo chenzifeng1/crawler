@@ -4,8 +4,11 @@
     <list default="true" id="cf4156bf-7b05-4995-9929-14e0e973c10d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/CSBook/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CSBook/bookInformation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/bookInformation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/CSBook/bookService.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/bookService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/CSBook/dataService.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/dataService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/CSBook/keywordService.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/keywordService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/CSBook/mysqlTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/mysqlTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/CSBook/mysqlservice.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/mysqlservice.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,19 +17,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/flask_project$Test.coverage" NAME="Test Coverage Results" MODIFIED="1556722322144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
-    <SUITE FILE_PATH="coverage/flask_project$pytest_in_bookInformation_py.coverage" NAME="pytest in bookInformation.py Coverage Results" MODIFIED="1556354128958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
-    <SUITE FILE_PATH="coverage/flask_project$mysqlTest.coverage" NAME="mysqlTest Coverage Results" MODIFIED="1555915688529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
+    <SUITE FILE_PATH="coverage/flask_project$Test.coverage" NAME="Test Coverage Results" MODIFIED="1557477442181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
+    <SUITE FILE_PATH="coverage/flask_project$pytest_in_bookInformation_py.coverage" NAME="pytest in bookInformation.py Coverage Results" MODIFIED="1556757235533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
+    <SUITE FILE_PATH="coverage/flask_project$mysqlTest.coverage" NAME="mysqlTest Coverage Results" MODIFIED="1557450358238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
     <SUITE FILE_PATH="coverage/flask_project$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1555766900584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/flask_project$bookInformation.coverage" NAME="bookInformation Coverage Results" MODIFIED="1556355406994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
+    <SUITE FILE_PATH="coverage/flask_project$bookInformation.coverage" NAME="bookInformation Coverage Results" MODIFIED="1556763329566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/CSBook/bookService.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="132" column="41" selection-start-line="132" selection-start-column="41" selection-end-line="132" selection-end-column="41" />
+            <state relative-caret-position="180">
+              <caret line="245" selection-start-line="245" selection-end-line="245" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -37,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/CSBook/dataService.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3057">
-              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+            <state relative-caret-position="274">
+              <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -47,22 +50,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CSBook/bookInformation.py">
+        <entry file="file://$PROJECT_DIR$/app/CSBook/getRequest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+            <state relative-caret-position="289">
+              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="16" selection-end-column="21" />
               <folding>
-                <element signature="e#268#283#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CSBook/getOpener.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -70,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/CSBook/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+            <state relative-caret-position="130">
+              <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -80,36 +74,8 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/site-packages/pymysql/cursors.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4401">
-              <caret line="169" selection-start-line="169" selection-end-line="169" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CSBook/mysqlservice.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2943">
-              <caret line="111" column="39" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CSBook/mysqlTest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/app/CSBook/Item.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -117,13 +83,43 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CSBook/mysqlconnect.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/CSBook/keywordService.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+            <state relative-caret-position="187">
+              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/CSBook/search.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-250">
+              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/CSBook/PKUSegService.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="30" column="24" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/CSBook/neo4jService.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+              <folding>
+                <element signature="e#1#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,22 +151,22 @@
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/CSBook/mysqlconnect.py" />
         <option value="$PROJECT_DIR$/app/views.py" />
-        <option value="$PROJECT_DIR$/app/CSBook/mysqlTest.py" />
         <option value="$PROJECT_DIR$/app/CSBook/.pytest_cache/keywordService.py" />
-        <option value="$PROJECT_DIR$/app/CSBook/dataService.py" />
-        <option value="$PROJECT_DIR$/app/CSBook/keywordService.py" />
         <option value="$PROJECT_DIR$/app/CSBook/Main.py" />
         <option value="$PROJECT_DIR$/app/CSBook/search.py" />
         <option value="$PROJECT_DIR$/app/CSBook/neo4jService.py" />
         <option value="$PROJECT_DIR$/app/CSBook/PKUSegService.py" />
-        <option value="$PROJECT_DIR$/app/CSBook/mysqlservice.py" />
         <option value="$PROJECT_DIR$/app/CSBook/bookInformation.py" />
-        <option value="$PROJECT_DIR$/app/CSBook/Test.py" />
+        <option value="$PROJECT_DIR$/app/CSBook/mysqlservice.py" />
+        <option value="$PROJECT_DIR$/app/CSBook/mysqlTest.py" />
         <option value="$PROJECT_DIR$/app/CSBook/bookService.py" />
+        <option value="$PROJECT_DIR$/app/CSBook/Test.py" />
+        <option value="$PROJECT_DIR$/app/CSBook/dataService.py" />
+        <option value="$PROJECT_DIR$/app/CSBook/keywordService.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1346" />
@@ -181,7 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,6 +199,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,10 +394,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Test" />
+        <item itemvalue="Python.mysqlTest" />
         <item itemvalue="Python.bookInformation" />
         <item itemvalue="Python tests.pytest in bookInformation.py" />
         <item itemvalue="Python.PKUSegService" />
-        <item itemvalue="Python.mysqlTest" />
       </list>
     </recent_temporary>
   </component>
@@ -432,16 +428,23 @@
       <workItem from="1556263237080" duration="10089000" />
       <workItem from="1556344598484" duration="9989000" />
       <workItem from="1556703743955" duration="3797000" />
+      <workItem from="1556755263036" duration="24000" />
+      <workItem from="1556755478181" duration="954000" />
+      <workItem from="1556763214838" duration="2405000" />
+      <workItem from="1556798191471" duration="2169000" />
+      <workItem from="1556968333861" duration="580000" />
+      <workItem from="1557053097121" duration="36000" />
+      <workItem from="1557310600592" duration="108000" />
+      <workItem from="1557317316595" duration="568000" />
+      <workItem from="1557318708851" duration="4664000" />
+      <workItem from="1557361274728" duration="3982000" />
+      <workItem from="1557391159879" duration="1201000" />
+      <workItem from="1557450095663" duration="339000" />
+      <workItem from="1557468246995" duration="8419000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_in_bookInformation_py - 2019.04.27 at 16h 15m 32s.xml">
-      <configuration name="pytest in bookInformation.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_bookInformation_py - 2019.04.27 at 16h 29m 09s.xml">
-      <configuration name="pytest in bookInformation.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_in_bookInformation_py - 2019.04.27 at 16h 32m 30s.xml">
       <configuration name="pytest in bookInformation.py" configurationId="tests" />
     </history-entry>
@@ -466,9 +469,15 @@
     <history-entry file="pytest_in_bookInformation_py - 2019.04.27 at 16h 35m 29s.xml">
       <configuration name="pytest in bookInformation.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_in_bookInformation_py - 2019.05.02 at 08h 32m 55s.xml">
+      <configuration name="pytest in bookInformation.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_bookInformation_py - 2019.05.02 at 08h 33m 59s.xml">
+      <configuration name="pytest in bookInformation.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66940000" />
+    <option name="totallyTimeSpent" value="92389000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -481,13 +490,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21255673" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15355521" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38688526" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39508197" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -576,74 +586,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/FileIO.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/getRequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="16" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/Item.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/keywordService.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/neo4jService.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2187">
-          <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
-          <folding>
-            <element signature="e#1#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../AppData/Roaming/Python/Python37/site-packages/pkuseg/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-216">
           <caret line="181" column="13" selection-start-line="181" selection-start-column="13" selection-end-line="181" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/PKUSegService.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -654,46 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/site-packages/pymysql/cursors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4401">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/mysqlservice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2943">
-          <caret line="111" column="39" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/mysqlTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/keywords.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/mysqlconnect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/logging/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -701,27 +607,151 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/site-packages/pymysql/err.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2862">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/site-packages/pymysql/cursors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3780">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/mysqlservice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1728">
+          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/mysqlconnect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/mysqlTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/CSBook/bookInformation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+        <state relative-caret-position="478">
+          <caret line="173" column="27" selection-start-line="173" selection-start-column="27" selection-end-line="173" selection-end-column="27" />
           <folding>
             <element signature="e#268#283#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/typing.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="525" column="44" lean-forward="true" selection-start-line="525" selection-start-column="25" selection-end-line="525" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/FileIO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/CSBook/getOpener.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="432">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/getRequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/Item.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/keywords.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/PKUSegService.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/neo4jService.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+          <folding>
+            <element signature="e#1#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/bookService.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="245" selection-start-line="245" selection-end-line="245" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/CSBook/dataService.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3057">
-          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="274">
+          <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
           </folding>
@@ -730,20 +760,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/CSBook/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        <state relative-caret-position="130">
+          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/bookService.py">
+    <entry file="file://$PROJECT_DIR$/app/CSBook/keywordService.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="132" column="41" selection-start-line="132" selection-start-column="41" selection-end-line="132" selection-end-column="41" />
+        <state relative-caret-position="187">
+          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
           <folding>
-            <element signature="e#24#33#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>

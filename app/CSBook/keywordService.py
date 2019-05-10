@@ -1,5 +1,5 @@
 import jieba.analyse
-
+from dataService import book_name
 
 def getKeywords():
     file = open('D:/book_infor/bookinfor.txt', 'r', encoding='UTF-8-sig')
@@ -25,3 +25,10 @@ def getField():
     nouns = file_nz.readlines()
     file_nz.close()
     return nouns
+
+def getBookName():
+    bookFile = open('D:/book_infor/data/book_name.txt', 'a', encoding='UTF-8-sig')
+
+    for book in book_name():
+        bookFile.write(book+'\n')
+    bookFile.close()
