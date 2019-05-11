@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf4156bf-7b05-4995-9929-14e0e973c10d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/CSBook/neo4jTest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/CSBook/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CSBook/bookService.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/bookService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/CSBook/dataService.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/dataService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/CSBook/keywordService.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/keywordService.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CSBook/mysqlTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/mysqlTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CSBook/mysqlservice.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/mysqlservice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/CSBook/neo4jService.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/CSBook/neo4jService.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/flask_project$Test.coverage" NAME="Test Coverage Results" MODIFIED="1557477442181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
+    <SUITE FILE_PATH="coverage/flask_project$Test.coverage" NAME="Test Coverage Results" MODIFIED="1557537277023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
     <SUITE FILE_PATH="coverage/flask_project$pytest_in_bookInformation_py.coverage" NAME="pytest in bookInformation.py Coverage Results" MODIFIED="1556757235533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
     <SUITE FILE_PATH="coverage/flask_project$mysqlTest.coverage" NAME="mysqlTest Coverage Results" MODIFIED="1557450358238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/CSBook" />
     <SUITE FILE_PATH="coverage/flask_project$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1555766900584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -26,49 +25,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CSBook/bookService.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="245" selection-start-line="245" selection-end-line="245" />
-              <folding>
-                <element signature="e#24#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CSBook/dataService.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
-              <folding>
-                <element signature="e#24#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/CSBook/getRequest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="16" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/CSBook/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="81">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -83,11 +43,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/CSBook/keywordService.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+            <state relative-caret-position="1566">
+              <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -98,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/CSBook/search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-250">
+            <state relative-caret-position="108">
               <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
             </state>
           </provider>
@@ -107,20 +67,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/CSBook/PKUSegService.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="810">
               <caret line="30" column="24" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/CSBook/neo4jService.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+            <state relative-caret-position="723">
+              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="86" selection-end-column="10" />
               <folding>
                 <element signature="e#1#43#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/site-packages/py2neo/database.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="309" column="23" selection-start-line="309" selection-start-column="19" selection-end-line="309" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/CSBook/neo4jTest">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -139,6 +117,10 @@
       <find>text</find>
       <find>考研</find>
       <find>n</find>
+      <find>工作日</find>
+      <find>天</find>
+      <find>非质量问题不接受退换货</find>
+      <find>历年</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,15 +136,16 @@
         <option value="$PROJECT_DIR$/app/CSBook/.pytest_cache/keywordService.py" />
         <option value="$PROJECT_DIR$/app/CSBook/Main.py" />
         <option value="$PROJECT_DIR$/app/CSBook/search.py" />
-        <option value="$PROJECT_DIR$/app/CSBook/neo4jService.py" />
         <option value="$PROJECT_DIR$/app/CSBook/PKUSegService.py" />
         <option value="$PROJECT_DIR$/app/CSBook/bookInformation.py" />
         <option value="$PROJECT_DIR$/app/CSBook/mysqlservice.py" />
         <option value="$PROJECT_DIR$/app/CSBook/mysqlTest.py" />
         <option value="$PROJECT_DIR$/app/CSBook/bookService.py" />
-        <option value="$PROJECT_DIR$/app/CSBook/Test.py" />
         <option value="$PROJECT_DIR$/app/CSBook/dataService.py" />
         <option value="$PROJECT_DIR$/app/CSBook/keywordService.py" />
+        <option value="$PROJECT_DIR$/app/CSBook/Test.py" />
+        <option value="$PROJECT_DIR$/app/CSBook/neo4jTest" />
+        <option value="$PROJECT_DIR$/app/CSBook/neo4jService.py" />
       </list>
     </option>
   </component>
@@ -177,6 +160,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,7 +183,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -234,29 +217,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Test">
-    <configuration name="PKUSegService" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="flask_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/CSBook" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/CSBook/PKUSegService.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.neo4jTest">
     <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flask_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -367,6 +328,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="neo4jTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="flask_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/CSBook" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/CSBook/neo4jTest" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest in bookInformation.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="flask_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -388,16 +368,16 @@
       <item itemvalue="Python.Test" />
       <item itemvalue="Python.bookInformation" />
       <item itemvalue="Python.mysqlTest" />
-      <item itemvalue="Python.PKUSegService" />
       <item itemvalue="Python tests.pytest in bookInformation.py" />
+      <item itemvalue="Python.neo4jTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.neo4jTest" />
         <item itemvalue="Python.Test" />
         <item itemvalue="Python.mysqlTest" />
         <item itemvalue="Python.bookInformation" />
         <item itemvalue="Python tests.pytest in bookInformation.py" />
-        <item itemvalue="Python.PKUSegService" />
       </list>
     </recent_temporary>
   </component>
@@ -440,7 +420,11 @@
       <workItem from="1557361274728" duration="3982000" />
       <workItem from="1557391159879" duration="1201000" />
       <workItem from="1557450095663" duration="339000" />
-      <workItem from="1557468246995" duration="8419000" />
+      <workItem from="1557468246995" duration="11982000" />
+      <workItem from="1557496065752" duration="2506000" />
+      <workItem from="1557535218763" duration="2673000" />
+      <workItem from="1557549967093" duration="882000" />
+      <workItem from="1557556223114" duration="2540000" />
     </task>
     <servers />
   </component>
@@ -477,7 +461,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92389000" />
+    <option name="totallyTimeSpent" value="104553000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -489,15 +473,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15355521" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1580938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39508197" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39508197" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -507,7 +491,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3295082" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.4180328" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.4180328" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -559,20 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/site-packages/py2neo/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22086">
-          <caret line="830" column="50" selection-start-line="830" selection-start-column="50" selection-end-line="830" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/site-packages/py2neo/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21951">
-          <caret line="826" selection-start-line="826" selection-end-line="826" />
         </state>
       </provider>
     </entry>
@@ -698,49 +668,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/getRequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="16" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/Item.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/keywords.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-250">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/PKUSegService.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/neo4jService.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
-          <folding>
-            <element signature="e#1#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/CSBook/bookService.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="6372">
           <caret line="245" selection-start-line="245" selection-end-line="245" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
@@ -750,30 +680,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/CSBook/dataService.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
+        <state relative-caret-position="4347">
+          <caret line="170" column="73" selection-start-line="170" selection-start-column="73" selection-end-line="170" selection-end-column="73" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CSBook/Test.py">
+    <entry file="file://$PROJECT_DIR$/app/CSBook/getRequest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        <state relative-caret-position="270">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="16" selection-end-column="21" />
           <folding>
-            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/Item.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/keywords.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/CSBook/keywordService.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+        <state relative-caret-position="1566">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/PKUSegService.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/neo4jTest">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/site-packages/py2neo/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="830" column="50" selection-start-line="830" selection-start-column="50" selection-end-line="830" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/site-packages/py2neo/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/site-packages/py2neo/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="309" column="23" selection-start-line="309" selection-start-column="19" selection-end-line="309" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CSBook/neo4jService.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="86" selection-end-column="10" />
+          <folding>
+            <element signature="e#1#43#0" expanded="true" />
           </folding>
         </state>
       </provider>

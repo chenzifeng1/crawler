@@ -5,7 +5,7 @@ import jieba.analyse
 from bookService import readBookField
 from keywordService import getKeywords,getAuthor
 import jieba.posseg as psg
-
+from pandas import DataFrame
 '''
 host:服务器ip地址，默认为'localhost'
 http_port:http协议——服务器监听端口，默认为7474
@@ -37,14 +37,14 @@ def createNode(label_name):
 
 
 def createBookNode():
-    file = open('D:/book_infor/data/books.txt', 'r', encoding='UTF-8-sig')
+    file = open('D:/book_infor/data/book_name1.txt', 'r', encoding='UTF-8-sig')
     books = file.readlines()
     textrank = jieba.analyse.textrank
     for line in books:
         book = line[2:-3]
         descirbe = textrank(line,topK=1)
         if len(descirbe)==0:
-            descirbe = '应用软件'
+            descirbe = '计算机相关'
         node = Node('book',name= book)
         node['describe'] = descirbe
         node.setdefault('field',1)
@@ -82,6 +82,7 @@ def createRelation(book,keyword):
     graph.commit()
 
 
-def creataBookFieldRelation():
-
+def creataBookAuthorRelation():
+    
     return
+

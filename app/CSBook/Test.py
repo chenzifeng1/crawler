@@ -1,7 +1,7 @@
 from dataService import dataSplite,dataStore
 
 from mysqlservice import *
-import neo4jService
+from neo4jService import *
 from keywordService import *
 from bookService import *
 from dataService import *
@@ -30,7 +30,7 @@ col_result = readBookField().description
 
 #getDoubanBooks()
 
-getBookName()
+createBookNode()
 #wordCut()
 
 

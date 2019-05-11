@@ -168,7 +168,7 @@ def book_name():
         if patten.findall(line) :
             continue
         else:
-            newline =re.sub(r"[\.\!\/_,$%^*(【】：\]\[\-:;+\"\']+|[+—'—！，。？、~@#￥%……&*（）《》]","",line).strip()
+            newline =re.sub(r"[\.\!\/_,$%^*(【】：\]\[\-:;+\"\']+|[+—'—！，。？?、~@#￥%……&*（）《》]","",line).strip()
             book=newline.split(' ')[0]
         if len(book)>0 and book not in books:
             books.append(book)

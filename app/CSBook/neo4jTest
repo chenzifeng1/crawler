@@ -1,0 +1,3 @@
+from neo4jService import *
+
+getBookNode()
