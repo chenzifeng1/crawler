@@ -2,7 +2,6 @@ import pymysql
 import re
 import traceback
 
-
 # 获取用户名和密码
 def getUsernameAndPassword():
     file = open('D:/book_infor/data/mysql.txt', 'r', encoding='UTF-8-sig')
@@ -116,7 +115,15 @@ def createTable(DBName, num):
             `tag_id` INT NOT NULL AUTO_INCREMENT,
             `tag_name` VARCHAR(50) NOT NULL ,
             PRIMARY KEY(tag_id));'''
-
+        sql_author = '''create table `author` (
+            `author_id` INT NOT NULL AUTO_INCREMENT,
+            `author_name` VARCHAR(50) NOT NULL ,
+            `nation` VARCHAR(50) NOT NULL,
+            PRIMARY KEY(author_id));'''
+        sql_publish = '''create table `publish` (
+            `publish_id` INT NOT NULL AUTO_INCREMENT,
+            `publish_name` VARCHAR(50) NOT NULL ,
+            PRIMARY KEY(publish_id));'''
         cursor = conn.cursor()
         cursor.execute('show tables;')
         row = cursor.fetchall()
@@ -138,12 +145,22 @@ def createTable(DBName, num):
         elif num ==5:
             SQL = sql_tag
             table_name = 'tag'
+        elif num ==6:
+            SQL = sql_author
+            table_name = 'author'
+        elif num ==7:
+            SQL =sql_publish
+            table_name = 'publish'
+        else:
+            print('请补充')
         exist_flag = isExist(row, table_name)
+
         if exist_flag:
             print('数据表已存在')
         else:
             cursor.execute(SQL)
             print('create table:' + table_name)
+
     except:
         traceback.print_exc()
     finally:
@@ -160,10 +177,9 @@ def isExist(row, search_name):
         return False
 
 
-# 向数据表中插入数据
-def insertData(DBName, datas):
+def selectData(DBName,table):
     root = getUsernameAndPassword()
-    sqlStr = 'insert '
+    sqlStr =  "SELECT * FROM "+ table
     conn = pymysql.connect(
         host=root['host'],
         port=3306,
@@ -172,3 +188,10 @@ def insertData(DBName, datas):
         database=DBName,
         charset='utf8'
     )
+    cursor =conn.cursor()
+    cursor.execute(sqlStr)
+    result = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+    return result

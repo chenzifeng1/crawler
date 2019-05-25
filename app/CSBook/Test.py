@@ -3,12 +3,14 @@ from dataService import dataSplite,dataStore
 from mysqlservice import *
 from neo4jService import *
 from keywordService import *
+from publishService import *
 from bookService import *
 from dataService import *
 from PKUSegService import wordCut
 import jieba.analyse
 inputfile = 'D:/book_infor/bookinfor.txt'
-
+for line in getPublish():
+    print(line)
 
 
 
@@ -30,10 +32,9 @@ col_result = readBookField().description
 
 #getDoubanBooks()
 
-createBookNode()
+#createBookNode()
 #wordCut()
-
-
+#getPublishFromDouban_book()
 
 
 

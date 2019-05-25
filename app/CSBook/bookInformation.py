@@ -84,15 +84,15 @@ def get_url_content(url):
     html = res.text
     soup = BeautifulSoup(html.encode('utf-8'),"lxml")
     tag = url.split("?")[0].split("/")[-1]  #页面标签，就是页面链接中'tag/'后面的字符串
-    titles = soup.select(".subject-list > .subject-item > .info > h2 > a") #包含书名的a标签
-    details = soup.select(".subject-list > .subject-item > .info > .pub") #包含书的作者，出版社等信息的div标签
-    scores = soup.select(".subject-list > .subject-item > .info > div > .rating_nums") #包含评分的span标签
-    persons = soup.select(".subject-list > .subject-item > .info > div > .pl")  #包含评价人数的span标签
+    titles = soup.select(".subject-list > .subject-item > .info > h2 > a")
+    details = soup.select(".subject-list > .subject-item > .info > .pub")
+    scores = soup.select(".subject-list > .subject-item > .info > div > .rating_nums")
+    persons = soup.select(".subject-list > .subject-item > .info > div > .pl")
 
     print("*******************这是 %s 类的书籍**********************" %tag)
 
     #打开文件，将信息写入文件
-    file = open("D:/book_infor/book_infor.txt",'a') #可以更改为你自己的文件地址
+    file = open("D:/book_infor/test1.txt",'a') #可以更改为你自己的文件地址
     file.write("tag:%s\n" % tag)
 
     #用zip函数将相应的信息以元祖的形式组织在一起，以供后面遍历
@@ -104,8 +104,8 @@ def get_url_content(url):
             publish = detail.get_text().split('/',4)[2]  #出版社
             time = detail.get_text().split('/',4)[3].split()[0].split('-')[0] #出版年份，只输出年
             price = get_rmb_price1(detail)   #获取价格
-            score = score.get_text() if True else ""   #如果没有评分就置空
-            person = get_person(person)  #获得评分人数
+            score = score.get_text() if True else ""
+            person = get_person(person)
             #在控制台测试打印
             test_print(name,author,intepretor,publish,time,price,score,person)
             #将书籍信息写入txt文件
@@ -132,7 +132,7 @@ def get_url_content(url):
                 publish = detail.get_text().split('/', 3)[1]  # 出版社
                 time = detail.get_text().split('/', 3)[2].split()[0].split('-')[0]  # 出版年份，只输出年
                 price = get_rmb_price2(detail)  # 获取价格
-                score = score.get_text() if True else ""  # 如果没有评分就置空
+                score = score.get_text() if True else ""
                 person = get_person(person)  # 获得评分人数
                 #在控制台测试打印
                 test_print(name, author, intepretor, publish, time, price, score, person)
@@ -165,7 +165,7 @@ def get_url_content(url):
 
 #程序执行入口
 if __name__ == '__main__':
-    #url = "https://book.douban.com/tag/程序"
+    url = "https://book.douban.com/tag/程序"
     print('begin:')
     book_url_list = provide_url() #存放豆瓣所有分类标签页URL的列表
     print(book_url_list)

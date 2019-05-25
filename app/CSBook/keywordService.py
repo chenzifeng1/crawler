@@ -1,7 +1,8 @@
 import jieba.analyse
 from dataService import book_name
 import re
-
+import pymysql
+from mysqlservice import getUsernameAndPassword
 
 def getKeywords():
     file = open('D:/book_infor/bookinfor.txt', 'r', encoding='UTF-8-sig')
@@ -16,10 +17,21 @@ def getKeywords():
     return book_fields
 
 def getAuthor():
-    file_nr = open('D:/book_infor/data/nr_nouns.txt', 'r', encoding='UTF-8-sig')
-    authores = file_nr.readlines()
-    file_nr.close()
-    return authores
+    root = getUsernameAndPassword()
+    conn = pymysql.connect(
+        host=root['host'],
+        port=3306,
+        user=root['username'],
+        password=root['password'],
+        database='test',
+        charset='utf8'
+    )
+    cursor = conn.cursor()
+    sqlStr = "SELECT * FROM author"
+    cursor.execute(sqlStr)
+    authors = cursor.fetchall()
+
+    return authors
 
 
 def getField():
@@ -60,3 +72,28 @@ def getBook():
     books = bookFile.readlines()
     bookFile.close()
     return books
+
+def douba_book():
+    root = getUsernameAndPassword()
+
+    conn = pymysql.connect(
+        host=root['host'],
+        port=3306,
+        user=root['username'],
+        password=root['password'],
+        database='test',
+        charset='utf8'
+    )
+
+    sqlStr = "select * from douban_book"
+    cursor = conn.cursor()
+    cursor.execute(sqlStr)
+    result = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+    print("select success")
+    return result
+
+
+
