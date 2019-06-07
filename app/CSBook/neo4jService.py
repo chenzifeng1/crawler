@@ -7,8 +7,10 @@ from keywordService import getKeywords,getAuthor,douba_book
 from authorService import createNationNode
 from tagService import getTag
 from publishService import getPublish
+import difflib
 import jieba.posseg as psg
 from pandas import DataFrame
+from newBookInfor import *
 '''
 host:服务器ip地址，默认为'localhost'
 http_port:http协议——服务器监听端口，默认为7474
@@ -123,30 +125,140 @@ def creataBookAuthorRelation(books,authors):
 def createAuthor_Nation():
     authors = matcher.match('author') #获取图数据库中的author节点
     nations = matcher.match('nation') #获取图数据库中的nation节点
-    print('begin:')
+    nationFile = open('D:/book_infor/data/nation_new.txt', 'a', encoding='UTF-8-sig')
+    Japan = re.compile(r"日")
+    Japan_s =[]
+    America = re.compile(r"美")
+    America_s =[]
+    France = re.compile(r"法")
+    France_s =[]
+    England = re.compile(r"英")
+    England_s =[]
+    Denmark = re.compile(r"丹")
+    Denmark_s =[]
+    Germany = re.compile(r"德")
+    Germany_s =[]
+    #*********************
+    HongKong = re.compile(r"港")
+    HongKong_s =[]
+    Italy = re.compile(r"意")
+    Italy_s =[]
+    Canada = re.compile(r"加")
+    Canada_s =[]
+    China = []
     for author in authors:
-        authorname = dict(author)['name']
-        nation_alias = dict(author)['nation']
-        for nation in nations :
-            if nation_alias == re.sub('\n','',dict(nation)['name']):
-                relationship = Relationship(author, 'nationality is', nation)  # 创建a与b之间的Realize关系
-                graph.merge(relationship)  # 将关系加入图数据库
-            elif nation_alias == re.sub('\n','',dict(nation)['alias']):
-                relationship = Relationship(author, 'nationality is', nation)  # 创建a与b之间的Realize关系
-                graph.merge(relationship)
-    print('success')
-    other_graph =createNationNode()
-    walk()
+        nation = author["name"]
+
+        if Japan.search(nation):
+            Japan_s.append(nation)
+            print(nation+":"+"日本")
+        elif America.search(nation):
+            America_s.append(nation)
+            print(nation + ":" + "美国")
+        elif France.search(nation):
+            France_s.append(nation)
+        elif England.search(nation):
+            England_s.append(nation)
+        elif Denmark.search(nation):
+            Denmark_s.append(nation)
+        elif Germany.search(nation):
+            Germany_s.append(nation)
+        elif HongKong.search(nation):
+            HongKong_s.append(nation)
+        elif Italy.search(nation):
+            Italy_s.append(nation)
+        elif Canada.search(nation):
+            Canada_s.append(nation)
+        elif len(nation)<4:
+            China.append(nation)
+
+    nationFile.write("日本"+"\n")
+    nationNode = matcher.match("nation", name="日本")
+    for line in Japan_s:
+        authorNode =matcher.match("author",name=line)
+        relation = Relationship(authorNode.first(),"nationality_is",nationNode.first())
+        graph.merge(relation)
+    #************************************************************************
+    nationFile.write("美国"+"\n")
+    nationNode = matcher.match("nation", name="美国")
+    for line in America_s:
+        authorNode =matcher.match("author",name=line)
+        relation = Relationship(authorNode.first(),"nationality_is",nationNode.first())
+        graph.merge(relation)
+    #************************************************************************
+    nationFile.write("英国"+"\n")
+    for line in England_s:
+        nationNode = matcher.match("nation", name="英国")
+        authorNode = matcher.match("author", name=line)
+        relation = Relationship(authorNode.first(),"nationality_is",nationNode.first())
+        graph.merge(relation)
+    #************************************************************************
+    nationFile.write("德国"+"\n")
+    nationNode = matcher.match("nation", name="德国")
+    for line in Germany_s:
+        authorNode = matcher.match("author", name=line)
+        relation = Relationship(authorNode.first(),"nationality_is",nationNode.first())
+        graph.merge(relation)
+    #************************************************************************
+    nationFile.write("法国"+"\n")
+    nationNode = matcher.match("nation", name="法国")
+    for line in France_s:
+        authorNode = matcher.match("author", name=line)
+        relation = Relationship(authorNode.first(),"nationality_is",nationNode.first())
+        graph.merge(relation)
+    #************************************************************************
+    nationFile.write("意大利"+"\n")
+    nationNode = matcher.match("nation", name="意大利")
+    for line in Italy_s:
+        authorNode = matcher.match("author", name=line)
+        relation = Relationship(authorNode.first(), "nationality_is", nationNode.first())
+        graph.merge(relation)
+    #************************************************************************
+    nationFile.write("丹麦"+"\n")
+    nationNode = matcher.match("nation", name="丹麦")
+    for line in Denmark_s:
+        authorNode = matcher.match("author", name=line)
+        relation = Relationship(authorNode.first(), "nationality_is", nationNode.first())
+        graph.merge(relation)
+    #************************************************************************
+    nationFile.write("香港"+"\n")
+    nationNode = matcher.match("nation", name="香港")
+    for line in HongKong_s:
+        authorNode = matcher.match("author", name=line)
+        relation = Relationship(authorNode.first(), "nationality_is", nationNode.first())
+        graph.merge(relation)
+    #************************************************************************
+    nationFile.write("加拿大"+"\n")
+    nationNode = matcher.match("nation", name="加拿大")
+    for line in Canada_s:
+        authorNode = matcher.match("author", name=line)
+        relation = Relationship(authorNode.first(), "nationality_is", nationNode.first())
+        graph.merge(relation)
+    #************************************************************************
+    nationFile.write("中国"+"\n")
+    nationNode = matcher.match("nation", name="中国")
+    for line in China:
+        authorNode = matcher.match("author", name=line)
+        relation = Relationship(authorNode.first(), "nationality_is", nationNode.first())
+        graph.merge(relation)
+
     graph.commit()
+    nationFile.close()
+
+    print("over")
+    #graph.commit()
 
 
 def insertTagNode():
-    result = getTag()
+    result = getNewTag()
     for line in result:
         id = line[0]
         tag = line[1]
+        page = line[2]
         tagNode = Node('tag', name=tag)
         tagNode['id'] = id
+        tagNode['page'] = page
+        print(tag)
         graph.merge(tagNode,'tag','name')
     graph.commit()
     print('insert tag_node success')
@@ -157,7 +269,7 @@ def createTagBase():
     BaseTag["describe"] ="书籍所属的领域标签"
     graph.merge(BaseTag,"base_node","name")
     for tagNode in tagNodes:
-        relationship = Relationship(tagNode, 'Inherit_from', BaseTag)  # 创建a与b之间的Realize关系
+        relationship = Relationship(tagNode, 'is_a', BaseTag)  # 创建a与b之间的Realize关系
         relationship["relation"] = "tag_to_base"
         graph.merge(relationship)
     graph.commit()
@@ -165,12 +277,13 @@ def createTagBase():
 
 
 def insertPublishNode():
-    publishes = getPublish()
+    #publishes = getPublish()
+    publishes = getNewPubulisher()
     for line in publishes:
-        id = line[0]
-        name = line[1]
-        node = Node("publish",name=name)
-        node["id"] = id
+        #id = line[0]
+        #name = line[1]
+        node = Node("publish",name=line)
+        #node["id"] = id
         graph.merge(node,"publish","name")
     graph.commit()
     print("success")
@@ -181,21 +294,19 @@ def createPublishBase():
     baseNode["describe"]="出版社的基类"
     graph.merge(baseNode,"base_node","name")
     for publish in publishes:
-        relation = Relationship(publish,"Inherit_from",baseNode)
+        relation = Relationship(publish,"is_a",baseNode)
         graph.merge(relation)
     graph.commit()
     print("insert success")
 
 def book_tag():
-    books = douba_book()
-    for book in books:
-        bookName = book[1]
-        bookTag = book[-1]
-        bookNode = Node("book",name = bookName)
-        tagNode =Node("tag",name = bookTag)
-        graph.merge(bookNode,"book","name")
-        graph.merge(tagNode,"tag","name")
-        relation = Relationship(bookNode,"belong to",tagNode)
+    result = getResult()
+
+    for line in result:
+        bookNode = matcher.match("book",name = line[1])
+        tagNode = matcher.match("tag",name = line[-1])
+        print(bookNode.first()["name"]+":"+tagNode.first()["name"])
+        relation = Relationship(bookNode.first(),"belong_to",tagNode.first())
         graph.merge(relation)
 
     graph.commit()
@@ -215,10 +326,10 @@ def book_author():
         authorName = book[2]
         bookName = book[1]
 
-        print(bookName+":"+authorName)
+        print(bookName+":"+authorName+"***************************")
         for author in authors:
-            if re.compile(author).search(authorName):
-                print(book+":"+author+':'+authorName)
+           # if re.compile(author).search(authorName):
+            print(author)
 
             #authorNode = Node("author",name=authorName)
             #graph.merge(authorNode,"author","name")
@@ -229,6 +340,103 @@ def book_author():
         #graph.delete(relation)
     #graph.commit()
     print("success")
+
+def addAuthorForBook():
+    author = "东野圭吾"
+    book = "解忧杂货店"
+    nation = "日本"
+    author_node = matcher.match("author",{"name":author})
+
+    print(author_node)
+    #author_node["nation"] = nation
+    author_node = matcher.match("author", "name")
+    print("step 1")
+    #graph.merge(author_node,"author","name")
+    #graph.merge(book_node,"book","name")
+    print("step 2")
+    #relation = Relationship(book_node,"is_writen_by",author_node)
+    #graph.merge(relation)
+    print("step 3")
+    #graph.commit()
+    print("success")
+
+def createNewBookNode():
+    root = getUsernameAndPassword()
+    conn = pymysql.connect(
+        host=root['host'],
+        port=3306,
+        user=root['username'],
+        password=root['password'],
+        database="test",
+        charset='utf8'
+    )
+
+    sqlStr = "select * from book_info;"
+    cursor = conn.cursor()
+    cursor.execute(sqlStr)
+    result = cursor.fetchall()
+    i = 0
+    j = 0
+    cursor.close()
+    conn.close()
+    bookid = []
+    for line in result:
+        bookNode = Node("book",name=line[1])
+        bookNode["book_id"]=line[0]
+        graph.merge(bookNode,"book","book_id")
+    graph.commit()
+    print("success")
+
+def createNewAuthor():
+    authors = getNewAuthor()
+    for line in authors:
+        authorNode =Node("author",name=line)
+        graph.merge(authorNode,'author',"name")
+    graph.commit()
+    print("success")
+
+def createBook_Author():
+    root = getUsernameAndPassword()
+    conn = pymysql.connect(
+        host=root['host'],
+        port=3306,
+        user=root['username'],
+        password=root['password'],
+        database="test",
+        charset='utf8'
+    )
+
+    sqlStr = "select * from book_info;"
+    cursor = conn.cursor()
+    cursor.execute(sqlStr)
+    result = cursor.fetchall()
+    i = 0
+    cursor.close()
+    conn.close()
+    print("begin")
+    for line in result:
+        bookNode = matcher.match("book",name=line[1])
+        authorNode = matcher.match("author",name=line[2])
+
+        relation =Relationship(bookNode.first(),"is_written_by",authorNode.first())
+        graph.merge(relation)
+        print("1")
+    graph.commit()
+
+    print("success")
+
+def createNationBase():
+    nations = matcher.match("nation")
+    baseNode = Node("base_node",name="国家")
+    baseNode["describe"]="国籍类的基类节点"
+    graph.merge(baseNode,"base_node","name")
+    for nation in nations:
+
+        relation = Relationship(nation,"is_a",baseNode)
+        graph.merge(relation)
+    graph.commit()
+    print("success")
+
 
 def exitConnect():
     graph.finish()

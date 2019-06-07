@@ -5,4 +5,5 @@ from authorService import createNationNode
 
 #createAuthor_Nation()
 
-book_author()
+#book_author()
+createNationBase()

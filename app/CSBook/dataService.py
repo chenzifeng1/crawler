@@ -18,6 +18,8 @@ segments = []
 #载入停用词
 stopwords = [line.strip() for line in codecs.open('D:/book_infor/stoped.txt', 'r', 'utf-8').readlines()]
 jieba.analyse.set_stop_words('D:/book_infor/stoped.txt')
+
+
 #获取书名 注：只含书名号的书名
 def dataSplite():
     row = []
@@ -98,14 +100,20 @@ def word():
     # word_c.append({'word':x.word,'flag':x.flag})
 
 def cut_word(datapath):
+    outfile = open('D:/book_infor/word/word_cut.txt','a',encoding='utf-8-sig')
     with open(datapath, 'r',encoding='utf-8') as fr:
         string=fr.read()
         print(type(string))
         #对文件中的非法字符进行过滤
-        data=re.sub(r"[\s+\.\!\/_,$%^*(【】：\]\[\-:;+\"\']+|[+——！，。？、~@#￥%……&*（）《》]+|[0-9]+","",string)
+        data=re.sub(r"[\s+\n+\.\!\/_,$%^*(【】：\]\[\-:;+\"\']+|[+——！，。？、~@#￥%……&*（）《》]+|[0-9]+","",string)
         word_list= jieba.cut(data)
-        print(word_list)
-        return word_list
+        words =[]
+        for line in word_list:
+            if line not in words and len(line)>1:
+                words.append(line)
+        for line in words:
+            outfile.write(line+' ')
+        return words
 
 
 #使用词典进行分词 统计词频
@@ -174,3 +182,24 @@ def book_name():
             books.append(book)
     file.close()
     return books
+
+#词性标注
+def partOfSpeechTagging():
+    file = open('D:/book_infor/word/word_cut.txt', 'r', encoding='utf-8-sig')
+    outfile =open('D:/book_infor/word/word_tag.txt', 'a', encoding='utf-8-sig')
+    outfile1 = open('D:/book_infor/word/word_tag1.txt', 'a', encoding='utf-8-sig')
+    words = file.read()
+    words = psg.cut(words)
+    pattern = re.compile(r'n')
+    for word in words:
+
+        if len(pattern.findall(word.flag))>0 or word.flag == 'l':
+            print(word.word+":"+word.flag)
+            outfile.write(word.word+":"+word.flag+"\n")
+            outfile1.write(word.word+'\n')
+
+
+    file.close()
+    outfile.close()
+    outfile1.close()
+    return 0

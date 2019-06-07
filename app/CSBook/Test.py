@@ -8,11 +8,9 @@ from bookService import *
 from dataService import *
 from PKUSegService import wordCut
 import jieba.analyse
+from newBookInfor import *
 inputfile = 'D:/book_infor/bookinfor.txt'
-for line in getPublish():
-    print(line)
-
-
+partOfSpeechTagging()
 
 #dataService.dataSplite()
 
@@ -35,7 +33,6 @@ col_result = readBookField().description
 #createBookNode()
 #wordCut()
 #getPublishFromDouban_book()
-
 
 
 
