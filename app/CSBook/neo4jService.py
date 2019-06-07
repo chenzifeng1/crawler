@@ -430,6 +430,7 @@ def createNationBase():
     baseNode = Node("base_node",name="国家")
     baseNode["describe"]="国籍类的基类节点"
     graph.merge(baseNode,"base_node","name")
+    print("begin:")
     for nation in nations:
 
         relation = Relationship(nation,"is_a",baseNode)
@@ -437,6 +438,22 @@ def createNationBase():
     graph.commit()
     print("success")
 
-
+def book_publisher():
+    result =getResult()
+    for line in result:
+        bookid=line[0]
+        bookNode = matcher.match("book",book_id=bookid).first()
+        publish = line[3]
+        publishNode =matcher.match("publish",name=publish)
+        if len(publishNode)>0:
+            relation = Relationship(bookNode,"is_published_by",publishNode.first())
+            graph.merge(relation)
+        else:
+            publishNode1 = Node("publish",name=publish)
+            graph.merge(publishNode1,"publish","name")
+            relation = Relationship(bookNode, "is_published_by", publishNode1)
+            graph.merge(relation)
+    graph.commit()
+    print("success")
 def exitConnect():
     graph.finish()
