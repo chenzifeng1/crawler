@@ -3,7 +3,20 @@ from keywordService import *
 from authorService import createNationNode
 
 
-#createAuthor_Nation()
 
-#book_author()
-book_publisher()
+
+# createNewBookNode()
+# createNewAuthor()
+# insertTagNode()
+# insertPublishNode()
+# createNation()
+
+
+# createBook_Author()
+# createPublishBase()
+# book_tag()
+
+# createAuthor_Nation()
+# createNationBase()
+# book_publisher()
+createAuthorBase()

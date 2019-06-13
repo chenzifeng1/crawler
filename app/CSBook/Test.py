@@ -10,7 +10,7 @@ from PKUSegService import wordCut
 import jieba.analyse
 from newBookInfor import *
 inputfile = 'D:/book_infor/bookinfor.txt'
-partOfSpeechTagging()
+
 
 #dataService.dataSplite()
 
@@ -27,7 +27,7 @@ result = readBookField().fetchall()
 col_result = readBookField().description
 '''
 #ne
-
+getDesc(1001193)
 #getDoubanBooks()
 
 #createBookNode()

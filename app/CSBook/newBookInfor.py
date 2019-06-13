@@ -130,3 +130,23 @@ def getResult():
     cursor.close()
     conn.close()
     return result
+
+def getDesc(bookid):
+    root = getUsernameAndPassword()
+    conn = pymysql.connect(
+        host=root['host'],
+        port=3306,
+        user=root['username'],
+        password=root['password'],
+        database = "test",
+        charset='utf8'
+    )
+
+    sqlStr = "select * from book_desc where id = "+str(bookid)
+    cursor = conn.cursor()
+    cursor.execute(sqlStr)
+    result = cursor.fetchall()
+    print(result)
+    cursor.close()
+    conn.close()
+    return result

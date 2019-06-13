@@ -25,12 +25,12 @@ result = readBookField().fetchall()
 
 
 #graph1 = Graph(host='localhost', http_port=7978, user='neo4j', password='neo4j')
-graph1 = Graph(host='localhost', http_port=7474, user='neo4j', password='neo4j')
-graph2 = Graph('http://localhost:7474/browser/', user='neo4j', password='neo4j')
-graph3 = Graph('https://localhost:7473/browser/', user='neo4j', password='neo4j')
+graph1 = Graph(host='http://112.74.160.185', http_port=7474, user='neo4j', password='root')
+graph2 = Graph('http://112.74.160.185:7474/browser/', user='neo4j', password='root')
+graph3 = Graph('https://localhost:7473/browser/', user='neo4j', password='root')
 graph4 = Graph(password='neo4j')
 
-graph = graph1.begin()  # 打开图数据库，未打开时不能进行操作
+graph = graph2.begin()  # 打开图数据库，未打开时不能进行操作
 matcher = NodeMatcher(graph) #使用NodeMatcher来查找数据
 
 def createNode(label_name):
@@ -40,25 +40,6 @@ def createNode(label_name):
     graph.merge(node,'base_node','name')  # 将节点加入图数据库与create不同之处在于若节点存在则不创建
     graph.commit()  # 提交图数据库的变更
 
-
-def createBookNode():
-    file = open('D:/book_infor/data/book_name1.txt', 'r', encoding='UTF-8-sig')
-    books = file.readlines()
-    textrank = jieba.analyse.textrank
-    for line in books:
-        book = line[2:-3]
-        descirbe = textrank(line,topK=1)
-        if len(descirbe)==0:
-            descirbe = '计算机相关'
-        node = Node('book',name= book)
-        node['describe'] = descirbe
-        node.setdefault('field',1)
-        graph.merge(node,'book','name')
-    graph.commit()
-
-
-def creatFieldNode():
-    return
 
 def createKeywordNode():
     keywords = getKeywords()
@@ -288,6 +269,8 @@ def insertPublishNode():
     graph.commit()
     print("success")
 
+
+
 def createPublishBase():
     publishes = matcher.match("publish")
     baseNode = Node("base_node",name="出版社")
@@ -298,6 +281,18 @@ def createPublishBase():
         graph.merge(relation)
     graph.commit()
     print("insert success")
+
+def createAuthorBase():
+    authors = matcher.match("author")
+    baseNode = Node("base_node",name="author")
+    baseNode["describe"]="作者的基类"
+    graph.merge(baseNode,"base_node","name")
+    for author in authors:
+        relation = Relationship(author,"is_a",baseNode)
+        graph.merge(relation)
+    graph.commit()
+    print("insert success")
+
 
 def book_tag():
     result = getResult()
@@ -375,14 +370,21 @@ def createNewBookNode():
     cursor = conn.cursor()
     cursor.execute(sqlStr)
     result = cursor.fetchall()
-    i = 0
-    j = 0
     cursor.close()
     conn.close()
-    bookid = []
     for line in result:
         bookNode = Node("book",name=line[1])
         bookNode["book_id"]=line[0]
+        print(line[0])
+        desc_s = getDesc(line[0])
+        if len(desc_s) !=0:
+            for desc in desc_s:
+                bookNode["desc"] =desc[2]
+                bookNode['img'] = desc[3]
+
+        else:
+            bookNode["desc"] = "该图书未添加描述"
+            bookNode['img'] = '/img/0.jpg'
         graph.merge(bookNode,"book","book_id")
     graph.commit()
     print("success")
@@ -457,3 +459,33 @@ def book_publisher():
     print("success")
 def exitConnect():
     graph.finish()
+
+def desc():
+    root = getUsernameAndPassword()
+    conn = pymysql.connect(
+        host=root['host'],
+        port=3306,
+        user=root['username'],
+        password=root['password'],
+        database="test",
+        charset='utf8'
+    )
+    cursor =conn.cursor()
+    sql = "select * from book_desc"
+    cursor.execute(sql)
+    result = cursor.fetchall()
+    for line in result:
+        id = line[0]
+        book_name = line[1]
+        book_desc = line[2]
+        book_img = line[3]
+        node = matcher.match("book",book_id = id)
+        node =  node.first()
+        node["book_desc"] = book_desc
+        print( book_desc)
+        node["book_img"] = book_img
+        graph.merge(node,"book","book_id")
+
+    graph.commit()
+    cursor.close()
+    conn.close()
